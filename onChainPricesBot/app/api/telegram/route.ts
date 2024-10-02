@@ -128,6 +128,37 @@ bot.on('callback_query', async (ctx) => {
     }
 });
 
+
+// Handle generic text messages
+bot.on('text', async (ctx) => {
+  const userMessage = ctx.message.text;
+  const lang = ctx.session.lang || 'es';
+
+  console.log("*********************");
+  console.log("[DEBUG] User message:", userMessage);
+  console.log("[DEBUG] Ctx:", ctx);
+  console.log("*********************");
+
+  });
+
+  bot.on('message_reaction', async (ctx) => {
+    console.log("*********************");
+    console.log("[DEBUG] Message Reaction:", ctx);
+    console.log("*********************");
+  });
+
+  bot.on('message_reaction_count', async (ctx) => {
+    console.log("*********************");
+    console.log("[DEBUG] Message Reaction Count:", ctx);
+    console.log("*********************");
+  });
+
+  bot.on('message', async (ctx) => {
+    console.log("*********************");
+    console.log("[DEBUG] Message:", ctx);
+    console.log("*********************");
+  });
+
 // Handle other commands or messages
 // ... (Implement logic to process user input, generate recommendations, etc.)
 // Handle messages (integrate OpenAI)
